@@ -1,0 +1,35 @@
+@SimpleCalc_HostAddress = http://localhost:5141
+
+### Add two numbers
+GET {{SimpleCalc_HostAddress}}/api/calc/add?a=10&b=5
+Accept: application/json
+
+### Subtract two numbers
+GET {{SimpleCalc_HostAddress}}/api/calc/subtract?a=10&b=3
+Accept: application/json
+
+### Multiply two numbers
+GET {{SimpleCalc_HostAddress}}/api/calc/multiply?a=4&b=7
+Accept: application/json
+
+### Divide two numbers
+GET {{SimpleCalc_HostAddress}}/api/calc/divide?a=15&b=3
+Accept: application/json
+
+### Divide by zero (error case)
+GET {{SimpleCalc_HostAddress}}/api/calc/divide?a=10&b=0
+Accept: application/json
+
+### Calculate power
+GET {{SimpleCalc_HostAddress}}/api/calc/power?baseNumber=2&exponent=3
+Accept: application/json
+
+### Calculate square root
+GET {{SimpleCalc_HostAddress}}/api/calc/sqrt?number=16
+Accept: application/json
+
+### Square root of negative number (error case)
+GET {{SimpleCalc_HostAddress}}/api/calc/sqrt?number=-4
+Accept: application/json
+
+###
