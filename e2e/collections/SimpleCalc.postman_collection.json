@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "54b69f09-f761-4fd9-adcd-427f90773ae0",
+		"name": "SimpleCalc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "320223"
+	},
+	"item": [
+		{
+			"name": "/api/calc/add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('Result is correctly 9', () => {\r",
+							"    pm.expect(pm.response.text().trim()).to.equals('9');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/add?a=4&b=5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"add"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "4"
+						},
+						{
+							"key": "b",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/multiply",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('Result is correctly 20', () => {\r",
+							"    pm.expect(pm.response.text().trim()).to.equals('20');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/multiply?a=4&b=5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"multiply"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "4"
+						},
+						{
+							"key": "b",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/divide",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('Result is correctly 2', () => {\r",
+							"    pm.expect(pm.response.text().trim()).to.equals('2');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/divide?a=10&b=5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"divide"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "10"
+						},
+						{
+							"key": "b",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/divide - Division by zero",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 400', () => {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test('Error message is correct', () => {\r",
+							"    pm.expect(pm.response.text()).to.include('Division by zero is not allowed');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/divide?a=10&b=0",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"divide"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "10"
+						},
+						{
+							"key": "b",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/power",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('Result is correctly 8', () => {\r",
+							"    pm.expect(pm.response.text().trim()).to.equals('8');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/power?baseNumber=2&exponent=3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"power"
+					],
+					"query": [
+						{
+							"key": "baseNumber",
+							"value": "2"
+						},
+						{
+							"key": "exponent",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/sqrt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('Result is correctly 3', () => {\r",
+							"    pm.expect(pm.response.text().trim()).to.equals('3');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/sqrt?number=9",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"sqrt"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/calc/sqrt - Negative number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 400', () => {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test('Error message is correct', () => {\r",
+							"    pm.expect(pm.response.text()).to.include('Cannot calculate square root of negative number');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/calc/sqrt?number=-4",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"sqrt"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "-4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
